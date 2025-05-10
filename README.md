@@ -1,98 +1,34 @@
-Copy
-<!DOCTYPE html>
-<html lang="fr">
+# Système de Détection d'Intrusion avec Apprentissage par Renforcement
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>README - Système de Détection d'Intrusion avec Apprentissage par Renforcement</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
+Un projet de cybersécurité implémenté en Java
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+## 📋 Vue d'ensemble
 
-        pre {
-            background-color: #f6f8fa;
-            border-radius: 6px;
-            padding: 16px;
-            overflow-x: auto;
-        }
+Ce projet implémente un système de détection d'intrusion (IDS) utilisant l'apprentissage par renforcement pour identifier et classer les comportements malveillants sur un réseau. Le système s'améliore progressivement grâce à un algorithme de Q-learning qui apprend à distinguer le trafic normal des activités suspectes.
 
-        code {
-            font-family: 'Consolas', 'Monaco', monospace;
-            font-size: 0.9em;
-        }
+## ✨ Fonctionnalités principales
 
-        h1,
-        h2,
-        h3 {
-            color: #2563eb;
-        }
+- Surveillance de trafic réseau via sockets Java
+- Simulation de trafic normal et d'attaques (DoS, scan de ports, etc.)
+- Détection d'intrusion basée sur les signatures et le comportement
+- Algorithme de Q-learning pour l'amélioration continue des détections
+- Interface utilisateur simple (console et GUI basée sur Swing)
+- Système d'alertes en temps réel
+- Génération de rapports d'incidents
 
-        .section {
-            margin-bottom: 30px;
-        }
-    </style>
-</head>
+## 🔧 Prérequis
 
-<body class="bg-gray-50">
-    <div class="container">
-        <header class="my-8 text-center">
-            <h1 class="text-4xl font-bold mb-3">Système de Détection d'Intrusion avec Apprentissage par Renforcement
-            </h1>
-            <p class="text-xl text-gray-600">Un projet de cybersécurité implémenté en Java</p>
-        </header>
+- Java Development Kit (JDK) 11 ou supérieur
+- Maven 3.6 ou supérieur
+- Espace disque minimum: 100 MB
+- RAM minimum recommandée: 2 GB
+- Droits administrateur pour la capture de paquets réseau (sur certains systèmes)
 
-        <div class="section">
-            <h2 class="text-2xl font-semibold mb-4">📋 Vue d'ensemble</h2>
-            <p class="mb-4">
-                Ce projet implémente un système de détection d'intrusion (IDS) utilisant l'apprentissage par
-                renforcement
-                pour identifier et classer les comportements malveillants sur un réseau. Le système s'améliore
-                progressivement grâce à un algorithme de Q-learning qui apprend à distinguer le trafic normal
-                des activités suspectes.
-            </p>
-        </div>
+## 📥 Installation
 
-        <div class="section">
-            <h2 class="text-2xl font-semibold mb-4">✨ Fonctionnalités principales</h2>
-            <ul class="list-disc pl-6 space-y-2">
-                <li>Surveillance de trafic réseau via sockets Java</li>
-                <li>Simulation de trafic normal et d'attaques (DoS, scan de ports, etc.)</li>
-                <li>Détection d'intrusion basée sur les signatures et le comportement</li>
-                <li>Algorithme de Q-learning pour l'amélioration continue des détections</li>
-                <li>Interface utilisateur simple (console et GUI basée sur Swing)</li>
-                <li>Système d'alertes en temps réel</li>
-                <li>Génération de rapports d'incidents</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2 class="text-2xl font-semibold mb-4">🔧 Prérequis</h2>
-            <ul class="list-disc pl-6">
-                <li>Java Development Kit (JDK) 11 ou supérieur</li>
-                <li>Maven 3.6 ou supérieur</li>
-                <li>Espace disque minimum: 100 MB</li>
-                <li>RAM minimum recommandée: 2 GB</li>
-                <li>Droits administrateur pour la capture de paquets réseau (sur certains systèmes)</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2 class="text-2xl font-semibold mb-4">📥 Installation</h2>
-            <pre><code>
+```bash
 # Cloner le repository
-git clone https://github.com/username/network-ids-rl.git
+git clone https://github.com/kamal4hamidi/network-ids-rl.git
 
 # Se déplacer dans le répertoire du projet
 cd network-ids-rl
@@ -102,13 +38,10 @@ mvn clean package
 
 # Exécuter l'application
 java -jar target/network-ids-rl-1.0.jar
-            </code></pre>
-        </div>
 
-        <div class="section">
-            <h2 class="text-2xl font-semibold mb-4">🏗️ Architecture du projet</h2>
-            <p class="mb-4">Le projet est structuré en modules fonctionnels :</p>
-            <pre><code>
+🏗️ Architecture du projet
+Le projet est structuré en modules fonctionnels :
+
 network-ids-rl/
 ├── src/
 │   ├── main/
@@ -123,41 +56,38 @@ network-ids-rl/
 │   ├── test/                                  # Tests unitaires et d'intégration
 ├── data/                                      # Données pour simulation et entraînement
 └── doc/                                       # Documentation technique
-            </code></pre>
-        </div>
 
-        <div class="section">
-            <h2 class="text-2xl font-semibold mb-4">🧠 Algorithme d'apprentissage par renforcement</h2>
-            <p class="mb-4">
-                Le système utilise un algorithme de Q-learning pour améliorer sa détection au fil du temps :
-            </p>
-            <ul class="list-disc pl-6 space-y-2">
-                <li><strong>États</strong> : Représentations des caractéristiques du trafic réseau (nombre de paquets,
-                    distribution des ports, etc.)</li>
-                <li><strong>Actions</strong> : Classification du trafic (normal, DoS, scan de port, etc.)</li>
-                <li><strong>Récompenses</strong> : Attribution de valeurs positives pour les détections correctes et
-                    négatives pour les faux positifs/négatifs</li>
-                <li><strong>Politique</strong> : Exploration/exploitation avec epsilon-greedy pour équilibrer
-                    l'apprentissage</li>
-            </ul>
-            <p class="mt-4">
-                La formule de mise à jour Q implémentée est :
-                <pre><code>Q(s,a) = Q(s,a) + α * (r + γ * max(Q(s',a')) - Q(s,a))</code></pre>
-                Où :
-            <ul class="list-disc pl-6">
-                <li>α (alpha) est le taux d'apprentissage</li>
-                <li>γ (gamma) est le facteur d'actualisation</li>
-                <li>r est la récompense immédiate</li>
-                <li>s est l'état actuel et s' l'état suivant</li>
-                <li>a est l'action actuelle et a' l'action suivante</li>
-            </ul>
-            </p>
-        </div>
 
-        <div class="section">
-            <h2 class="text-2xl font-semibold mb-4">🖥️ Utilisation</h2>
-            <h3 class="text-xl font-medium mb-2">Interface console</h3>
-            <pre><code>
+🧠 Algorithme d'apprentissage par renforcement
+Le système utilise un algorithme de Q-learning pour améliorer sa détection au fil du temps :
+
+États : Représentations des caractéristiques du trafic réseau (nombre de paquets, distribution des ports, etc.)
+
+Actions : Classification du trafic (normal, DoS, scan de port, etc.)
+
+Récompenses : Attribution de valeurs positives pour les détections correctes et négatives pour les faux positifs/négatifs
+
+Politique : Exploration/exploitation avec epsilon-greedy pour équilibrer l'apprentissage
+
+La formule de mise à jour Q implémentée est :
+
+Q(s,a) = Q(s,a) + α * (r + γ * max(Q(s',a')) - Q(s,a))
+
+Où :
+
+α (alpha) est le taux d'apprentissage
+
+γ (gamma) est le facteur d'actualisation
+
+r est la récompense immédiate
+
+s est l'état actuel et s' l'état suivant
+
+a est l'action actuelle et a' l'action suivante
+
+🖥️ Utilisation
+Interface console
+
 # Mode de surveillance en temps réel
 java -jar target/network-ids-rl-1.0.jar --mode=monitor
 
@@ -166,95 +96,59 @@ java -jar target/network-ids-rl-1.0.jar --mode=simulate --dataset=data/scenario1
 
 # Mode d'entraînement
 java -jar target/network-ids-rl-1.0.jar --mode=train --iterations=1000
-            </code></pre>
 
-            <h3 class="text-xl font-medium mt-4 mb-2">Interface graphique</h3>
-            <p>
-                Exécutez l'application sans arguments pour lancer l'interface graphique :
-                <pre><code>java -jar target/network-ids-rl-1.0.jar</code></pre>
-                La GUI permet de :
-            <ul class="list-disc pl-6">
-                <li>Visualiser le trafic réseau en temps réel</li>
-                <li>Configurer les paramètres de détection</li>
-                <li>Observer l'apprentissage du système</li>
-                <li>Générer des rapports d'incidents</li>
-            </ul>
-            </p>
-        </div>
+Interface graphique
+Exécutez l'application sans arguments pour lancer l'interface graphique :
 
-        <div class="section">
-            <h2 class="text-2xl font-semibold mb-4">📊 Tests et évaluation</h2>
-            <p>
-                Le système a été testé avec différents scénarios d'attaque :
-            </p>
-            <ul class="list-disc pl-6">
-                <li>Attaques par déni de service (DoS)</li>
-                <li>Scans de ports (TCP SYN, XMAS)</li>
-                <li>Tentatives d'exploitation de vulnérabilités courantes</li>
-                <li>Traffic légitime à haute fréquence (pour tester les faux positifs)</li>
-            </ul>
-            <p class="mt-4">
-                Les métriques suivantes ont été collectées :
-            </p>
-            <ul class="list-disc pl-6">
-                <li>Précision : 92%</li>
-                <li>Rappel : 89%</li>
-                <li>F1-Score : 90.5%</li>
-                <li>Taux de faux positifs : 7%</li>
-            </ul>
-            <p class="mt-4">
-                Pour exécuter les tests :
-                <pre><code>mvn test</code></pre>
-            </p>
-        </div>
+java -jar target/network-ids-rl-1.0.jar
 
-        <div class="section">
-            <h2 class="text-2xl font-semibold mb-4">📝 Générer la documentation</h2>
-            <pre><code>
-# Générer la JavaDoc
-mvn javadoc:javadoc
+La GUI permet de :
 
-# La documentation sera disponible dans target/site/apidocs/
-            </code></pre>
-        </div>
+Visualiser le trafic réseau en temps réel
 
-        <div class="section">
-            <h2 class="text-2xl font-semibold mb-4">🔍 À propos du projet</h2>
-            <p>
-                Ce projet a été développé dans le cadre d'un cours de cybersécurité avancée. L'objectif principal
-                était d'explorer l'application des techniques d'apprentissage par renforcement dans le domaine
-                de la détection d'intrusions réseau. Bien que ce système soit principalement éducatif,
-                il démontre comment l'intelligence artificielle peut être appliquée pour améliorer
-                les systèmes de sécurité classiques.
-            </p>
-        </div>
+Configurer les paramètres de détection
 
-        <div class="section">
-            <h2 class="text-2xl font-semibold mb-4">🤝 Contribution</h2>
-            <p>
-                Les contributions sont les bienvenues ! Pour contribuer :
-            </p>
-            <ol class="list-decimal pl-6">
-                <li>Forkez le projet</li>
-                <li>Créez une branche pour votre fonctionnalité (<code>git checkout -b feature/ma-fonctionnalite</code>)
-                </li>
-                <li>Committez vos changements (<code>git commit -m 'Ajout de ma fonctionnalité'</code>)</li>
-                <li>Poussez vers la branche (<code>git push origin feature/ma-fonctionnalite</code>)</li>
-                <li>Ouvrez une Pull Request</li>
-            </ol>
-        </div>
+Observer l'apprentissage du système
 
-        <div class="section">
-            <h2 class="text-2xl font-semibold mb-4">📄 Licence</h2>
-            <p>
-                Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus d'informations.
-            </p>
-        </div>
+Générer des rapports d'incidents
 
-        <footer class="mt-10 pt-4 border-t border-gray-300 text-center text-gray-600">
-            <p>© 2023 Projet IDS par HAMIDI Kamal</p>
-        </footer>
-    </div>
-</body>
+📊 Tests et évaluation
+Le système a été testé avec différents scénarios d'attaque :
 
-</html>
+Attaques par déni de service (DoS)
+
+Scans de ports (TCP SYN, XMAS)
+
+Tentatives d'exploitation de vulnérabilités courantes
+
+Traffic légitime à haute fréquence (pour tester les faux positifs)
+
+Les métriques suivantes ont été collectées :
+
+Précision : 92%
+
+Rappel : 89%
+
+F1-Score : 90.5%
+
+Taux de faux positifs : 7%
+
+Pour exécuter les tests :
+
+mvn test
+
+🔍 À propos du projet
+Ce projet a été développé dans le cadre d'un cours de cybersécurité avancée. L'objectif principal était d'explorer l'application des techniques d'apprentissage par renforcement dans le domaine de la détection d'intrusions réseau. Bien que ce système soit principalement éducatif, il démontre comment l'intelligence artificielle peut être appliquée pour améliorer les systèmes de sécurité classiques.
+
+🤝 Contribution
+Les contributions sont les bienvenues ! Pour contribuer :
+
+Forkez le projet
+
+Créez une branche pour votre fonctionnalité (git checkout -b feature/ma-fonctionnalite)
+
+Committez vos changements (git commit -m 'Ajout de ma fonctionnalité')
+
+Poussez vers la branche (git push origin feature/ma-fonctionnalite)
+
+Ouvrez une Pull Request
