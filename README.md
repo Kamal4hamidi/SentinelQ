@@ -41,7 +41,7 @@ java -jar target/network-ids-rl-1.0.jar
 
 ```
 
-🏗️ Architecture du projet
+## 🏗️ Architecture du projet
 Le projet est structuré en modules fonctionnels :
 ```bash
 network-ids-rl/
@@ -60,7 +60,7 @@ network-ids-rl/
 └── doc/                                       # Documentation technique
 ```
 
-🧠 Algorithme d'apprentissage par renforcement
+## 🧠 Algorithme d'apprentissage par renforcement
 Le système utilise un algorithme de Q-learning pour améliorer sa détection au fil du temps :
 
 États : Représentations des caractéristiques du trafic réseau (nombre de paquets, distribution des ports, etc.)
@@ -87,7 +87,7 @@ s est l'état actuel et s' l'état suivant
 
 a est l'action actuelle et a' l'action suivante
 
-🖥️ Utilisation
+## 🖥️ Utilisation
 Interface console
 ```bash
 # Mode de surveillance en temps réel
@@ -115,7 +115,7 @@ Observer l'apprentissage du système
 
 Générer des rapports d'incidents
 
-📊 Tests et évaluation
+## 📊 Tests et évaluation
 Le système a été testé avec différents scénarios d'attaque :
 
 Attaques par déni de service (DoS)
@@ -140,10 +140,10 @@ Pour exécuter les tests :
 ```bash
 mvn test
 ```
-🔍 À propos du projet
+## 🔍 À propos du projet
 Ce projet a été développé dans le cadre d'un cours de cybersécurité avancée. L'objectif principal était d'explorer l'application des techniques d'apprentissage par renforcement dans le domaine de la détection d'intrusions réseau. Bien que ce système soit principalement éducatif, il démontre comment l'intelligence artificielle peut être appliquée pour améliorer les systèmes de sécurité classiques.
 
-🤝 Contribution
+## 🤝 Contribution
 Les contributions sont les bienvenues ! Pour contribuer :
 
 Forkez le projet
