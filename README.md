@@ -39,9 +39,11 @@ mvn clean package
 # Exécuter l'application
 java -jar target/network-ids-rl-1.0.jar
 
-🏗️ Architecture du projet
-Le projet est structuré en modules fonctionnels :
+```
 
+## 🏗️ Architecture du projet
+Le projet est structuré en modules fonctionnels :
+```bash
 network-ids-rl/
 ├── src/
 │   ├── main/
@@ -56,9 +58,9 @@ network-ids-rl/
 │   ├── test/                                  # Tests unitaires et d'intégration
 ├── data/                                      # Données pour simulation et entraînement
 └── doc/                                       # Documentation technique
+```
 
-
-🧠 Algorithme d'apprentissage par renforcement
+## 🧠 Algorithme d'apprentissage par renforcement
 Le système utilise un algorithme de Q-learning pour améliorer sa détection au fil du temps :
 
 États : Représentations des caractéristiques du trafic réseau (nombre de paquets, distribution des ports, etc.)
@@ -70,9 +72,9 @@ Récompenses : Attribution de valeurs positives pour les détections correctes e
 Politique : Exploration/exploitation avec epsilon-greedy pour équilibrer l'apprentissage
 
 La formule de mise à jour Q implémentée est :
-
+```bash
 Q(s,a) = Q(s,a) + α * (r + γ * max(Q(s',a')) - Q(s,a))
-
+```
 Où :
 
 α (alpha) est le taux d'apprentissage
@@ -85,9 +87,9 @@ s est l'état actuel et s' l'état suivant
 
 a est l'action actuelle et a' l'action suivante
 
-🖥️ Utilisation
+## 🖥️ Utilisation
 Interface console
-
+```bash
 # Mode de surveillance en temps réel
 java -jar target/network-ids-rl-1.0.jar --mode=monitor
 
@@ -97,11 +99,12 @@ java -jar target/network-ids-rl-1.0.jar --mode=simulate --dataset=data/scenario1
 # Mode d'entraînement
 java -jar target/network-ids-rl-1.0.jar --mode=train --iterations=1000
 
+```
 Interface graphique
 Exécutez l'application sans arguments pour lancer l'interface graphique :
-
+```bash
 java -jar target/network-ids-rl-1.0.jar
-
+```
 La GUI permet de :
 
 Visualiser le trafic réseau en temps réel
@@ -112,7 +115,7 @@ Observer l'apprentissage du système
 
 Générer des rapports d'incidents
 
-📊 Tests et évaluation
+## 📊 Tests et évaluation
 Le système a été testé avec différents scénarios d'attaque :
 
 Attaques par déni de service (DoS)
@@ -134,13 +137,13 @@ F1-Score : 90.5%
 Taux de faux positifs : 7%
 
 Pour exécuter les tests :
-
+```bash
 mvn test
-
-🔍 À propos du projet
+```
+## 🔍 À propos du projet
 Ce projet a été développé dans le cadre d'un cours de cybersécurité avancée. L'objectif principal était d'explorer l'application des techniques d'apprentissage par renforcement dans le domaine de la détection d'intrusions réseau. Bien que ce système soit principalement éducatif, il démontre comment l'intelligence artificielle peut être appliquée pour améliorer les systèmes de sécurité classiques.
 
-🤝 Contribution
+## 🤝 Contribution
 Les contributions sont les bienvenues ! Pour contribuer :
 
 Forkez le projet
